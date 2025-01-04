@@ -1,0 +1,34 @@
+<!-- views/editTask.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Task</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Edit Task</h1>
+    <form action="/editTask/<%= task.id %>" method="POST">
+      <div class="mb-3">
+        <label for="name" class="form-label">Task Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="<%= task.name %>" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3" required><%= task.description %></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-select" id="status" name="status" required>
+          <option value="Pending" <% if (task.status === 'Pending') { %>selected<% } %>>Pending</option>
+          <option value="Started" <% if (task.status === 'Started') { %>selected<% } %>>Started</option>
+          <option value="Almost" <% if (task.status === 'Almost') { %>selected<% } %>>Almost Done</option>
+        </select>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-warning">Update Task</button>
+        <a href="/" class="btn btn-secondary">Cancel</a>
+      </div>
+    </form
