@@ -1,0 +1,26 @@
+### API Documentation
+
+1. *GET `/`*
+   - *Description*: Renders the main page of the app.
+
+2. *GET `/addTask`*
+   - *Description*: Renders the page where users can add a new task.
+
+3. *GET `/editTask/:id`*
+   - *Description*: Renders the page where users can edit a task by its ID.
+
+4. *GET `/api/tasks`*
+   - *Description*: Retrieves all tasks as a JSON array.
+
+5. *POST `/api/tasks`*
+   - *Description*: Creates a new task. The request body must contain `name` and `description` for the task.
+
+6. *PUT `/api/tasks/:id`*
+   - *Description*: Updates a task by its ID. The request body must contain `name` and `description` for the task.
+
+7. *PATCH `/api/tasks/:id`*
+   - *Description*: Marks a task as "Done" by updating its status.
+
+8. *DELETE `/api/tasks/:id`*
+   - *Description*: Deletes a task by its ID.
+
